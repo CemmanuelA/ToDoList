@@ -1,0 +1,17 @@
+<ion-content style="--padding-bottom: 5rem;">
+  <div class="title-container">
+    <h5>Tareas</h5>
+    <span>{{assings}}</span>
+  </div>
+  <div *ngFor="let task of tasks">
+    <app-task-card [data]="task" (itemDeleted)="getTasks()"></app-task-card>
+  </div>
+  <div *ngIf="tasks.length === 0">
+    <p>No hay tareas</p>
+  </div>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button size="large" class="btn-add" [routerLink]="['/create']">
+      <ion-icon name="add" size="large"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>

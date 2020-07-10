@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="10" class="ion-align-self-center">
+          <ion-row>
+            <ion-title size="large">
+              To do list
+            </ion-title>
+          </ion-row>
+          <ion-row>
+            <ion-title size="small" class="subtitle">
+              {{date}}
+            </ion-title>
+          </ion-row>
+        </ion-col>
+        <ion-col size="2" class="ion-align-self-center">
+          <ion-avatar>
+            <img [src]="people[0].photo" />
+          </ion-avatar>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-toolbar>
+</ion-header>

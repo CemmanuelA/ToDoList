@@ -1,0 +1,56 @@
+<ion-card>
+  <ion-card-header>
+   <ion-grid>
+     <ion-row>
+       <ion-col size="5" class="ion-align-self-center">
+        <ion-card-title [ngClass]="{'task-active': data.status.value === 0, 'task-done': data.status.value === 1}">
+          {{data.status.label}}
+        </ion-card-title>
+       </ion-col>
+       <ion-col size="7" class="ion-align-self-center ion-text-center">
+          <ion-button size="small" class="btn-time" *ngIf="data.time === null" [routerLink]="['/create']" [state]="{task: data}" (click)="handleShowOptions(false)">
+            Agregar tiempo
+          </ion-button>
+       </ion-col>
+     </ion-row>
+   </ion-grid>
+  </ion-card-header>
+
+  <ion-card-content>
+   <ion-grid>
+     <ion-row class="card-title">
+       <ion-col size="5" class="ion-align-self-center">
+        <ion-avatar>
+          <img [src]="data.assign.photo" />
+        </ion-avatar>
+         <p>{{data.assign.name}}</p>
+       </ion-col>
+       <ion-col size="7" class="ion-align-self-center" *ngIf="data.time !== null && data.status.value === 0">
+        <ion-icon name="time-outline"></ion-icon>
+         <p>{{ 'Tiempo restante: ' + getTimeLeft(data.time) + 'hr'}}</p>
+       </ion-col>
+     </ion-row>
+     <ion-row class="card-content">
+      <ion-col size="11" >
+        <h5>{{data.content.title}}</h5>
+      </ion-col>
+      <ion-col size="1" style="position: relative;">
+        <ion-icon name="ellipsis-vertical" (click)="handleShowOptions()"></ion-icon>
+        <div [hidden]="!showOptions" class="options">
+          <div [routerLink]="['/create']" [state]="{task: data}" (click)="handleShowOptions(false)">
+            <ion-icon name="eye"></ion-icon>
+            Ver tarea
+          </div>
+          <div (click)="handleDelete(data)">
+            <ion-icon name="trash-outline"></ion-icon>
+            Borrar tarea
+          </div>
+        </div>
+      </ion-col>
+      <ion-col size="12">
+        <p>{{data.content.description.length > 100 ? data.content.description.substring(0,100) + '...' : data.content.description.substring(0,100)}}</p>
+      </ion-col>
+     </ion-row>
+   </ion-grid>
+  </ion-card-content>
+</ion-card>

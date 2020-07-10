@@ -1,0 +1,112 @@
+
+ion-grid {
+    padding: 0;
+}
+
+ion-card {
+    max-width: 310px;
+    max-height: 240px;
+    ion-card-header {
+        margin: 0.3rem 0.5rem;
+        padding: 0;
+        border-bottom: 2px solid #F0F3FF;
+    }
+}
+
+.card-title {
+    ion-col {
+        ion-avatar {
+            width: 24px;
+            height: 24px;
+            display: inline-block;            
+            padding-top: 0.5rem;
+            img {
+                height: 100%;
+                width: 100%;
+                object-fit: fill;
+            }
+        }
+        ion-icon {
+            width: 16px;
+            height: 16px;
+            padding-top: 0.5rem;
+            margin-right: 0.2rem;
+            display: inline-block;
+        }
+        p {
+            font-size: 11px;
+            color: #010C3B;
+            display: inline-block;
+            font-weight: 600;
+        }
+        &:nth-child(2) {
+            p {
+                color: #333D69 !important;
+            }
+        }
+    }
+}
+
+.card-content {
+    border-left: 2px solid #2DC09D;
+    ion-col {
+        h5 {
+                color: #333D69;
+                font-size: 16px;
+                font-weight: 700;
+        }
+        ion-icon {
+            color: #B9BCC4;
+            width: 18px;
+            height: 18px;        
+        }
+        p {
+            opacity: 70%;
+            color: #333D69;
+            font-size: 13px;
+            font-weight: 600;
+        }
+    }
+}
+.btn-time {
+    font-size: 14px;
+    text-transform: capitalize;
+    font-weight: 700;
+    --background: #425195;
+}
+.task-active {
+    color: #2DC09D;
+}
+
+.task-done {
+    color: #DC3646;
+}
+
+.options {
+    position: absolute;
+    width: 108px;
+    height: 63px;
+    border-radius: 8px;
+    right: 60%;
+    top: 0%;
+    background: #FFF;
+    z-index: 1;
+    padding: 0.5rem;
+    box-shadow: -1px 1px 5px 2px #EBEDF4;
+    div {
+        font-size: 13px;
+        font-weight: 600;
+        color: #425195;
+        ion-icon {
+            color: #425195;
+            width: 13px;
+            height: 13px;
+        }
+        &:nth-child(2) {
+            color: #B8BBC3 !important;
+            ion-icon {
+                color: #B8BBC3!important
+            }
+        }
+    }
+}

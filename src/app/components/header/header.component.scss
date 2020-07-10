@@ -1,0 +1,35 @@
+ion-header {
+    ion-toolbar {
+        ion-grid {
+            height: 129px;
+            ion-row {
+                height: 100%;
+                ion-col {
+                    ion-row {
+                        ion-title {
+                            font-weight: bold;
+                            font-size: 26px;
+                            color: #010C3B;
+                        }
+                    }
+                    ion-avatar {
+                        width: 48px;
+                        height: 48px;
+                        img {
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.subtitle {
+    margin-top: 0.3rem;
+    color: #425195 !important;
+    opacity: 70%;
+    font-weight: 500 !important;
+    font-size: 14px !important;
+}

@@ -1,0 +1,41 @@
+
+<ion-content>
+  <form [formGroup]="form">
+    <h2>Crear tarea</h2>
+    <!-- Title -->
+    <ion-item>
+      <ion-label position="floating">Título</ion-label>
+      <ion-input formControlName="title"></ion-input>
+    </ion-item>
+    <!-- Description -->
+    <ion-item>
+      <ion-label position="floating">Descripción</ion-label>
+      <ion-textarea formControlName="description" [rows]="3"></ion-textarea>
+    </ion-item>
+    <!-- Time -->
+    <ion-item>
+      <ion-label position="floating">Tiempo (hr)</ion-label>
+      <ion-input formControlName="time" onlyNumber></ion-input>
+    </ion-item>
+    <!-- Assign -->
+    <ion-item>
+      <ion-label position="floating">Asignar a</ion-label>
+      <ion-select formControlName="assign" interface="popover">
+        <ion-select-option *ngFor="let person of people" [value]="person">{{person.name}}</ion-select-option>
+      </ion-select>  
+    </ion-item>
+    <!-- Status -->
+    <ion-item>
+      <ion-label position="floating">Estado</ion-label>
+      <ion-select formControlName="status" interface="popover" [disabled]="!task ? true : false">
+        <ion-select-option *ngFor="let status of statusList" [value]="status">{{status.label}}</ion-select-option>
+      </ion-select>  
+    </ion-item>
+    <div class="btn-container">
+      <ion-button [disabled]="!form.valid" style="--background: #425195;" (click)="!task ? handleCreate() : handleUpdate()">
+        {{ !task ? 'Crear' : 'Actualizar' }}
+      </ion-button>
+      <ion-button [routerLink]="['/list']" color="secondary">Volver a lista</ion-button>
+   </div>
+  </form>
+</ion-content>

@@ -1,0 +1,17 @@
+ion-content {
+    --background: #F3F5FA;
+    --padding-end: 1rem;
+    --padding-start: 1rem;
+    form {
+        ion-item {
+            --background: transparent;
+            --padding-start: 0;
+        }
+    }
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
